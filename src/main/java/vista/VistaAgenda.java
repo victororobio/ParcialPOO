@@ -4,12 +4,21 @@
  */
 package vista;
 
-/**
- *
- * @author usuario
- */
+import controlador.ControladorAgenda;
+
+
 public class VistaAgenda extends javax.swing.JFrame {
+
     
+    private ControladorAgenda controlador;
+
+    
+    public VistaAgenda(ControladorAgenda controlador) {
+        initComponents();
+        this.controlador = controlador;
+       
+        setLocationRelativeTo(null);
+    }
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaAgenda.class.getName());
 
     /**
@@ -53,6 +62,7 @@ public class VistaAgenda extends javax.swing.JFrame {
         txtNombre.addActionListener(this::txtNombreActionPerformed);
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         jLabel1.setText("Guardar contacto");
 
@@ -166,6 +176,10 @@ public class VistaAgenda extends javax.swing.JFrame {
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
