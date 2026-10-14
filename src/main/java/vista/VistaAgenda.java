@@ -167,7 +167,20 @@ public class VistaAgenda extends javax.swing.JFrame {
 
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
- 
+        String nombre = txtNombre.getText().trim();
+        String telefono = txtTelefono.getText().trim();
+        if (nombre.isEmpty() || telefono.isEmpty()) {
+            lblMensajeGuardar.setText("Complete el nombre y el teléfono");
+            return;
+        }
+        boolean guardado = controlador.guardarContacto(nombre, telefono);
+        if (guardado) {
+            lblMensajeGuardar.setText("Contacto guardado: " + nombre);
+            txtNombre.setText("");
+            txtTelefono.setText("");
+        } else {
+            lblMensajeGuardar.setText("El contacto ya existe: " + nombre);
+        } 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     
