@@ -28,3 +28,4 @@ public class ControladorAgenda {
         return agenda.buscarTelefono(nombre.trim());
     }
 }
+ 
